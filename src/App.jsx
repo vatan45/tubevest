@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Tv, Coins, Zap, Play, ChevronRight, Users, Sparkles, BarChart, Shield, Globe, Menu, X } from 'lucide-react';
+import { Tv, Coins, Zap, Play, ChevronRight, Users, Sparkles, BarChart, Shield, Globe, Menu, X, Twitter, Linkedin, Mail } from 'lucide-react';
+import founderImage from './luffy.webp';
 
 export default function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -248,6 +249,59 @@ export default function LandingPage() {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* Add the founder section here */}
+        <section className="founder py-24 relative overflow-hidden">
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-5xl lg:text-6xl font-bold mb-16 text-center">
+              Meet the <span className="text-blue-600">Founder</span>
+            </h2>
+            <div className="flex flex-col lg:flex-row items-center justify-center">
+              <motion.div
+                className="lg:w-1/2 mb-12 lg:mb-0 relative"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="absolute inset-0 bg-blue-200 rounded-full filter blur-3xl opacity-50 animate-pulse"></div>
+                <div className="relative">
+                  <img
+                    src={founderImage}
+                    alt="Vatan Malik"
+                    className="w-64 h-64 lg:w-96 lg:h-96 rounded-full mx-auto shadow-2xl object-cover border-8 border-white relative z-10"
+                  />
+
+                </div>
+              </motion.div>
+              <motion.div
+                className="lg:w-1/2 lg:pl-16"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <h3 className="text-5xl font-bold mb-4 text-blue-600">Vatan Malik</h3>
+                <p className="text-2xl text-gray-700 mb-6">Founder & CEO</p>
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  As a passionate entrepreneur and tech visionary, I founded YTOpinion Market to revolutionize content monetization. My mission is to empower creators, bridging the gap between traditional media and Web3 technologies, and unlocking new possibilities for influencers worldwide.
+                </p>
+                <div className="flex space-x-6 mb-8">
+                  <a href="https://x.com/vatanmalik_45" className="bg-blue-100 p-3 rounded-full hover:bg-blue-200 transition duration-300 transform hover:scale-110">
+                    <Twitter className="w-6 h-6 text-blue-600" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/vatan-malik-08b607283/" className="bg-blue-100 p-3 rounded-full hover:bg-blue-200 transition duration-300 transform hover:scale-110">
+                    <Linkedin className="w-6 h-6 text-blue-600" />
+                  </a>
+                  <a href="#" className="bg-blue-100 p-3 rounded-full hover:bg-blue-200 transition duration-300 transform hover:scale-110">
+                    <Mail className="w-6 h-6 text-blue-600" />
+                  </a>
+                </div>
+
+              </motion.div>
+            </div>
+          </div>
+          <div className="absolute top-1/2 left-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+          <div className="absolute top-1/2 right-0 w-64 h-64 bg-yellow-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
         </section>
 
         <section className="cta py-24 bg-gradient-to-r from-blue-500 to-blue-600 text-white">
