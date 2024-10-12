@@ -24,8 +24,11 @@ export default function LandingPage() {
         <div className="absolute -bottom-1/2 left-1/4 w-full h-full bg-yellow-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
 
-      <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <header className={`fixed left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 mt-4 ${scrolled
+        ? 'bg-white bg-opacity-50 backdrop-blur-md shadow-lg rounded-full'
+        : ''
+        }`} style={{ width: '90%', maxWidth: '1400px' }}>
+        <div className="w-full px-8 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Tv className="w-8 h-8 text-blue-600" />
             <span className={`text-2xl font-bold ${scrolled ? 'text-gray-900' : 'text-blue-600'}`}>YTOpinion Market</span>
@@ -34,7 +37,8 @@ export default function LandingPage() {
             <ul className="flex space-x-8">
               {['Home', 'Marketplace', 'Create', 'About'].map((item) => (
                 <li key={item}>
-                  <a href="#" className={`text-sm uppercase tracking-wider hover:text-blue-600 transition duration-300 ${scrolled ? 'text-gray-700' : 'text-gray-900'}`}>
+                  <a href="#" className={`text-sm uppercase tracking-wider hover:text-blue-600 transition duration-300 ${scrolled ? 'text-gray-900' : 'text-blue-600'
+                    }`}>
                     {item}
                   </a>
                 </li>
@@ -42,7 +46,10 @@ export default function LandingPage() {
             </ul>
           </nav>
           <button
-            className={`md:hidden p-2 rounded-md ${scrolled ? 'bg-gray-100 text-gray-700' : 'bg-blue-100 text-blue-600'} hover:bg-blue-600 hover:text-white transition duration-300`}
+            className={`md:hidden p-2 rounded-full ${scrolled
+              ? 'bg-gray-100 bg-opacity-50 text-gray-900'
+              : 'bg-blue-100 text-blue-600'
+              } hover:bg-blue-600 hover:text-white transition duration-300`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -54,7 +61,7 @@ export default function LandingPage() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="md:hidden bg-white shadow-lg"
+              className="md:hidden bg-white shadow-lg rounded-2xl mt-2 mx-4"
             >
               <ul className="py-4">
                 {['Home', 'Marketplace', 'Create', 'About'].map((item) => (
