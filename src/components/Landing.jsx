@@ -112,9 +112,9 @@ export default function LandingPage() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.4 }}
                             >
-                                <button className="px-8 py-4 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-lg">
+                                <Link to="/market" className="px-8 py-4 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-lg">
                                     Get Started
-                                </button>
+                                </Link>
                                 <button className="px-8 py-4 bg-white border-2 border-blue-600 text-blue-600 rounded-full font-semibold hover:bg-blue-50 transition duration-300 shadow-lg">
                                     Learn More
                                 </button>
@@ -316,9 +316,9 @@ export default function LandingPage() {
                     <div className="container mx-auto px-4 text-center">
                         <h2 className="text-4xl lg:text-5xl font-bold mb-8">Ready to Tokenize Your Influence?</h2>
                         <p className="text-xl mb-12 max-w-2xl mx-auto">Join the future of content monetization and unlock the true value of your YouTube channel.</p>
-                        <button className="px-12 py-6 bg-white text-blue-600 rounded-full text-xl font-bold hover:bg-gray-100 transition duration-300 shadow-lg">
+                        <Link to="/market" className="inline-block px-12 py-6 bg-white text-blue-600 rounded-full text-xl font-bold hover:bg-gray-100 transition duration-300 shadow-lg">
                             Get Started Now
-                        </button>
+                        </Link>
                     </div>
                 </section>
             </main>
